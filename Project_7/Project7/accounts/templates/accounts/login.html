@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+
+    Log In
+
+{% endblock %}
+
+
+
+{% block body %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+
+
+    COMPLETED LOG IN FORM. USERS CAN NOw LOG IN. LOOK FOR NEXT STEP. POSSIBLY EDITING USER INFO OR VALIDATIONS.
+
+{% endblock %}

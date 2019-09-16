@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block title %}
+    Profile
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+    <div class="grid-65">
+        <h2>Username</h2>
+        {{ person.username }}<br>
+        <h2>Email</h2>
+        {{ person.email }}<br>
+        <h2>Date of Birth</h2>
+        {{ person.more_user_details.dob }}<br>
+        <h2>Bio</h2>
+        {{ person.more_user_details.bio }}<br>
+        <h2>Display Picture</h2>
+        <img src="{{ person.more_user_details.avatar.url }}" alt="" width="240"> <br>
+        <a href="{% url 'accounts:editprofile' %}">Edit Profile?</a>
+
+
+
+
+        <!--{% if person.more.user_details.avatar.url %}
+            <img src="{{ person.more_user_details.avatar.url }}" alt="" width="240">
+
+        {% else %}
+            <h1>No user image found</h1>
+        {% endif %} -->
+
+
+        {% if not person.more_user_details.bio %}
+            <h1>Please fill out the form below to update your account</h1>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit">
+
+            </form>
+
+
+        {% endif %}
+
+    </div>
+
+{% endblock %}
