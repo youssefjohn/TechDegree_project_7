@@ -1,5 +1,6 @@
-#!/Users/python/PycharmProjects/Project_7/venv/bin/python
-
+#!/bin/sh
+'''exec' "/Users/python/Documents/Treehouse Projects/TechDegree_project_7/Project_7/venv/bin/python" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
